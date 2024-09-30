@@ -11,4 +11,9 @@ class PostController extends Controller
         $posts = Post::all();
         return view('posts.index', ['allposts' => $posts]);
     }
+
+    public function show($id) {
+        $post = Post::find($id);
+        return view('posts.show', ['singlepost' => $post]);
+    }
 }
